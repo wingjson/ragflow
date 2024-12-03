@@ -39,6 +39,7 @@ class GenerateParam(ComponentParamBase):
         self.frequency_penalty = 0
         self.cite = True
         self.parameters = []
+        self.truncate_prompt_tokens = 0
 
     def check(self):
         self.check_decimal_float(self.temperature, "[Generate] Temperature")
@@ -53,6 +54,7 @@ class GenerateParam(ComponentParamBase):
         conf = {}
         if self.max_tokens > 0: conf["max_tokens"] = self.max_tokens
         if self.temperature > 0: conf["temperature"] = self.temperature
+        if self.truncate_prompt_tokens > 0: conf["truncate_prompt_tokens"] = self.truncate_prompt_tokens
         if self.top_p > 0: conf["top_p"] = self.top_p
         if self.presence_penalty > 0: conf["presence_penalty"] = self.presence_penalty
         if self.frequency_penalty > 0: conf["frequency_penalty"] = self.frequency_penalty

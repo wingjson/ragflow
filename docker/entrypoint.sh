@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # replace env variables in the service_conf.yaml file
 rm -rf /ragflow/conf/service_conf.yaml
@@ -12,9 +11,11 @@ export http_proxy=""; export https_proxy=""; export no_proxy=""; export HTTP_PRO
 
 /usr/sbin/nginx
 
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+# export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+PY=/root/anaconda3/envs/rag/bin/python
+export PYTHONPATH=/home/railmodel/Rag/rag1128
+export HF_ENDPOINT=https://hf-mirror.com
 
-PY=python3
 if [[ -z "$WS" || $WS -lt 1 ]]; then
   WS=1
 fi

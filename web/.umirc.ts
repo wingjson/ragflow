@@ -1,3 +1,11 @@
+/*
+ * @Author: wingjson wingjson@outlook.com
+ * @Date: 2024-11-28 15:59:09
+ * @LastEditors: wingjson wingjson@outlook.com
+ * @LastEditTime: 2024-11-28 19:22:18
+ * @FilePath: \ragflow014\ragflow\web\.umirc.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import path from 'path';
 import { defineConfig } from 'umi';
 import { appName } from './src/conf.json';
@@ -34,7 +42,7 @@ export default defineConfig({
   proxy: [
     {
       context: ['/api', '/v1'],
-      target: 'http://127.0.0.1:9380/',
+      target: 'http://192.168.107.16:9381/',
       changeOrigin: true,
       ws: true,
       logger: console,
